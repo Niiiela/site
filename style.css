@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&family=Monoton&family=MonteCarlo&family=Pinyon+Script&family=Roboto:ital,wght@1,100&family=Ruge+Boogie&family=Style+Script&family=Tourney:wght@100&family=WindSong&display=swap');
-@import url("htps://cdnjs.claudflare.com/alax/libs/font-awesome/5.12.0.2/css/all.min.css");
 
 *{
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
+}
+
+:root{
+    --font-primary:"Gentium Book Basic", serif;
+    --font-secudary: "Ruge Boogie & family" serif;
+    --font-action: "Ruge Boogie & family" serif;
 
 }
 
@@ -23,13 +28,55 @@
     justify-content: space-evenly;
     cursor: pointer;
 }
+.show-menu .h{
+    right: 17rem;
+
+}
 .line{
     width: 100%;
-    height: .1rem;
+    height: 0.1rem;
     background-color: white;
     box-shadow: 0.1rem 0.1rem 1px rgb(3, 3, 3);
+    transition: transform 1s;
 }
 
+.show-menu #line3{
+    transform: rotate(45deg) translate(0.3rem, 0.45rem);
+}
+.show-menu #line1{
+    opacity: 0;
+    visibility: hidden;
+}
+.show-menu #line2{
+    transform: rotate(-45deg) translate(0.2rem, -0.45rem);
+}
+
+.h span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c059ab;
+    color: rgb(248, 246, 250);
+    font-family: var(--font-action);
+    opacity: 0;
+}
+.h span::before{
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #c059ab;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+.show-menu .h:hover span{
+    opacity: 1;
+
+}
 header{
     width: 100%;
     height: 100vh;
@@ -41,6 +88,7 @@ header{
     height: 100%;
     overflow: hidden;
     background-color: black;
+
 
 }
 .i img{
@@ -67,7 +115,7 @@ header{
 .a h1{
     color: white;
     font-size: 3rem;
-    font-family: "Gentium Book Basic", serif;
+    font-family: var(--font-primary);
     font-weight: 200;
     text-shadow: .3rem .4rem 2px black;
     line-height: 3.5rem;
@@ -76,16 +124,16 @@ header{
     animation: movea 1s 0.5s forwards; 
 }
 .a p{
-    font-family: "Ruge Boogie & family" serif;
     color:white;
     font-size: 2rem;
+    font-family: var(--font-secudary);
     text-shadow:  .2rem .2rem black;
     margin-bottom: 2rem;
     opacity: 0;
     animation: movea 1s 0.7s forwards; 
 }
 .a button{
-    font-family: "Ruge Boogie & family" serif;
+    font-family: var(--font-action);
     text-transform: uppercase;
     letter-spacing: .1rem;
     color:#fdf6f6;
@@ -119,17 +167,53 @@ header{
     background-color: white;
     position: fixed;
     top: 0;
+    right:-20rem;
+    transition: all 1s;
+}
+.show-menu .ha{
     right: 0;
 }
+
 .menu{
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 10%;
+    left: 40%;
     transform: translate(.50%, .50%);
 }
-.menu.item{
-    text-align: center;
+.menu-item{
+    text-align:center;
+    font-size: 5rem;
+
 }
-.menu.link {
-    
+.menu-link {
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: rgb(99, 93, 93);
+    transform: color 1s;
+}
+.menu-link:hover{
+    color: #ff00cc;
+}
+
+.social{    
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social i{
+    background-color: rgb(250, 239, 250);
+    color: darkmagenta;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+.social i:hover{
+    background-color: #ff00cc;
 }
